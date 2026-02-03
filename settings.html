@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки | Vision Mail</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/pages-additional.css">
+</head>
+<body class="settings-page">
+    <!-- Анимированный фон -->
+    <div class="background-animation">
+        <div class="particles-container" id="particles"></div>
+        <div class="gradient-mesh"></div>
+    </div>
+    
+    <!-- Основной контейнер -->
+    <div class="app-container">
+        <!-- Боковая панель навигации настроек -->
+        <nav class="settings-sidebar scroll-glass">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                        </svg>
+                    </div>
+                    <h1 class="logo-text">
+                        <span class="logo-gradient">Настройки</span>
+                    </h1>
+                </div>
+                <a href="inbox.html" class="back-button neumorphic-button">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="sidebar-menu">
+                <div class="menu-items">
+                    <button class="menu-item active" data-section="appearance">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zm1-17.93c3.94.49 7 3.85 7 7.93s-3.05 7.44-7 7.93V4.07z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-label">Внешний вид</span>
+                        <span class="nav-indicator"></span>
+                    </button>
+                    
+                    <button class="menu-item" data-section="account">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-label">Аккаунт</span>
+                        <span class="nav-indicator"></span>
+                    </button>
+                    
+                    <button class="menu-item" data-section="notifications">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-label">Уведомления</span>
+                        <span class="nav-indicator"></span>
+                    </button>
+                    
+                    <button class="menu-item" data-section="mail">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-label">Почта</span>
+                        <span class="nav-indicator"></span>
+                    </button>
+                    
+                    <button class="menu-item" data-section="privacy">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-label">Приватность</span>
+                        <span class="nav-indicator"></span>
+                    </button>
+                    
+                    <button class="menu-item" data-section="shortcuts">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M17 20.41L18.41 19 15 15.59 13.59 17 17 20.41zM7.5 8H11v5.59L5.59 19 7 20.41l6-6V8h3.5L12 3.5 7.5 8z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-label">Горячие клавиши</span>
+                        <span class="nav-indicator"></span>
+                    </button>
+                    
+                    <button class="menu-item" data-section="advanced">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-label">Расширенные</span>
+                        <span class="nav-indicator"></span>
+                    </button>
+                    
+                    <button class="menu-item" data-section="about">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-label">О программе</span>
+                        <span class="nav-indicator"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon sun">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                    </span>
+                    <span class="theme-icon moon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </span>
+                    <span class="theme-slider"></span>
+                </button>
+                
+                <button class="save-button neumorphic-button" data-action="save-settings">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    Сохранить
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Основное содержимое настроек -->
+        <main class="settings-content">
+            <!-- Секция внешнего вида -->
+            <section class="settings-section active" id="appearanceSection">
+                <div class="section-header">
+                    <h2>Внешний вид</h2>
+                    <p class="section-description">Настройте внешний вид Vision Mail под свой вкус</p>
+                </div>
+                
+                <div class="settings-grid">
+                    <!-- Тема -->
+                    <div class="settings-card glass-panel">
+                        <div class="card-header">
+                            <h3>Тема</h3>
+                            <p class="card-description">Выберите тему интерфейса</p>
+                        </div>
+                        
+                        <div class="card-content">
+                            <div class="theme-selector">
+                                <div class="theme-option" data-theme="dark">
+                                    <div class="theme-preview dark">
+                                        <div class="preview-header"></div>
+                                        <div class="preview-sidebar"></div>
+                                        <div class="preview-content">
+                                            <div class="preview-item"></div>
+                                            <div class="preview-item"></div>
+                                        </div>
+                                    </div>
+                                    <div class="theme-label">
+                                        <span class="theme-name">Тёмная</span>
+                                        <span class="theme-status active">Активна</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="theme-option" data-theme="light">
+                                    <div class="theme-preview light">
+                                        <div class="preview-header"></div>
+                                        <div class="preview-sidebar"></div>
+                                        <div class="preview-content">
+                                            <div class="preview-item"></div>
+                                            <div class="preview-item"></div>
+                                        </div>
+                                    </div>
+                                    <div class="theme-label">
+                                        <span class="theme-name">Светлая</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="theme-option" data-theme="auto">
+                                    <div class="theme-preview auto">
+                                        <div class="preview-left dark">
+                                            <div class="preview-header"></div>
+                                            <div class="preview-sidebar"></div>
+                                        </div>
+                                        <div class="preview-right light">
+                                            <div class="preview-header"></div>
+                                            <div class="preview-sidebar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="theme-label">
+                                        <span class="theme-name">Автоматически</span>
+                                        <span class="theme-description">Следует системной теме</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Цвет акцента -->
+                    <div class="settings-card glass-panel">
+                        <div class="card-header">
+                            <h3>Цвет акцента</h3>
+                            <p class="card-description">Выберите основной цвет интерфейса</p>
+                        </div>
+                        
+                        <div class="card-content">
+                            <div class="accent-selector">
+                                <div class="accent-colors">
+                                    <button class="accent-color active" data-color="purple" style="background: #8a2be2">
+                                        <span class="accent-check">
+                                            <svg viewBox="0 0 24 24">
+                                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                    <button class="accent-color" data-color="red" style="background: #ff3366"></button>
+                                    <button class="accent-color" data-color="orange" style="background: #ff6600"></button>
+                                    <button class="accent-color" data-color="yellow" style="background: #ffcc00"></button>
+                                    <button class="accent-color" data-color="green" style="background: #00cc66"></button>
+                                    <button class="accent-color" data-color="cyan" style="background: #00ffff"></button>
+                                </div>
+                                
+                                <div class="custom-accent">
+                                    <label for="customColor">Пользовательский цвет:</label>
+                                    <div class="color-input-group">
+                                        <input type="color" id="customColor" value="#8a2be2">
+                                        <input type="text" id="customColorHex" value="#8a2be2" class="neumorphic-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Стиль интерфейса -->
+                    <div class="settings-card glass-panel">
+                        <div class="card-header">
+                            <h3>Стиль интерфейса</h3>
+                            <p class="card-description">Настройте эффекты и анимации</p>
+                        </div>
+                        
+                        <div class="card-content">
+                            <div class="style-settings">
+                                <div class="style-option">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="glassEffect" checked>
+                                        <span class="checkbox-custom neumorphic-checkbox"></span>
+                                        <span class="checkbox-label">Glass эффекты</span>
+                                    </label>
+                                    <p class="option-description">Полупрозрачные панели с размытием фона</p>
+                                </div>
+                                
+                                <div class="style-option">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="neonEffects" checked>
+                                        <span class="checkbox-custom neumorphic-checkbox"></span>
+                                        <span class="checkbox-label">Неоновые эффекты</span>
+                                    </label>
+                                    <p class="option-description">Свечение и неоновые акценты</p>
+                                </div>
+                                
+                                <div class="style-option">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="animations" checked>
+                                        <span class="checkbox-custom neumorphic-checkbox"></span>
+                                        <span class="checkbox-label">Анимации</span>
+                                    </label>
+                                    <p class="option-description">Плавные переходы и анимации</p>
+                                </div>
+                                
+                                <div class="style-option">
+                                    <label class="slider-label">Интенсивность анимаций</label>
+                                    <div class="slider-container">
+                                        <input type="range" id="animationIntensity" min="0" max="100" value="75" class="slider">
+                                        <div class="slider-value">
+                                            <span class="value-label">Средняя</span>
+                                            <span class="value-percent">75%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="style-option">
+                                    <label class="slider-label">Размытие фона</label>
+                                    <div class="slider-container">
+                                        <input type="range" id="blurIntensity" min="0" max="30" value="15" class="slider">
+                                        <div class="slider-value">
+                                            <span class="value-label">Среднее</span>
+                                            <span class="value-px">15px</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Плотность интерфейса -->
+                    <div class="settings-card glass-panel">
+                        <div class="card-header">
+                            <h3>Плотность интерфейса</h3>
+                            <p class="card-description">Настройте расстояние между элементами</p>
+                        </div>
+                        
+                        <div class="card-content">
+                            <div class="density-options">
+                                <div class="density-option" data-density="compact">
+                                    <div class="density-preview compact">
+                                        <div class="preview-item"></div>
+                                        <div class="preview-item"></div>
+                                        <div class="preview-item"></div>
+                                    </div>
+                                    <div class="density-label">
+                                        <span class="density-name">Компактная</span>
+                                        <span class="density-desc">Максимум информации</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="density-option active" data-density="comfortable">
+                                    <div class="density-preview comfortable">
+                                        <div class="preview-item"></div>
+                                        <div class="preview-item"></div>
+                                        <div class="preview-item"></div>
+                                    </div>
+                                    <div class="density-label">
+                                        <span class="density-name">Комфортная</span>
+                                        <span class="density-desc">Рекомендуется</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="density-option" data-density="spacious">
+                                    <div class="density-preview spacious">
+                                        <div class="preview-item"></div>
+                                        <div class="preview-item"></div>
+                                        <div class="preview-item"></div>
+                                    </div>
+                                    <div class="density-label">
+                                        <span class="density-name">Просторная</span>
+                                        <span class="density-desc">Минимализм</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Секция аккаунта -->
+            <section class="settings-section" id="accountSection">
+                <div class="section-header">
+                    <h2>Аккаунт</h2>
+                    <p class="section-description">Управление вашей учетной записью</p>
+                </div>
+                
+                <div class="settings-grid">
+                    <div class="settings-card glass-panel">
+                        <div class="card-header">
+                            <h3>Профиль</h3>
+                        </div>
+                        
+                        <div class="card-content">
+                            <div class="profile-settings">
+                                <div class="profile-header">
+                                    <div class="profile-avatar">
+                                        <img src="https://ui-avatars.com/api/?name=Alexey+Ivanov&background=8a2be2&color=fff" alt="Алексей Иванов">
+                                        <button class="avatar-change">Изменить</button>
+                                    </div>
+                                    <div class="profile-info">
+                                        <h4>Алексей Иванов</h4>
+                                        <p class="profile-email">alex@vision.com</p>
+                                        <p class="profile-member">Premium членство • с января 2026</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="profileName">Имя</label>
+                                    <input type="text" id="profileName" value="Алексей Иванов" class="neumorphic-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="profileEmail">Электронная почта</label>
+                                    <input type="email" id="profileEmail" value="alex@vision.com" class="neumorphic-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="profileBio">О себе</label>
+                                    <textarea id="profileBio" rows="3" class="neumorphic-input" placeholder="Расскажите о себе...">Senior разработчик в Vision Technologies. Увлекаюсь футуристическим дизайном и квантовыми вычислениями.</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card glass-panel">
+                        <div class="card-header">
+                            <h3>Безопасность</h3>
+                        </div>
+                        
+                        <div class="card-content">
+                            <div class="security-settings">
+                                <div class="security-item">
+                                    <div class="security-info">
+                                        <h4>Пароль</h4>
+                                        <p>Последнее изменение: 2 недели назад</p>
+                                    </div>
+                                    <button class="security-action" data-action="change-password">
+                                        Изменить
+                                    </button>
+                                </div>
+                                
+                                <div class="security-item">
+                                    <div class="security-info">
+                                        <h4>Двухфакторная аутентификация</h4>
+                                        <p>Добавьте дополнительный уровень защиты</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="twoFactorAuth">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="security-item">
+                                    <div class="security-info">
+                                        <h4>Активные сессии</h4>
+                                        <p>3 активные сессии</p>
+                                    </div>
+                                    <button class="security-action" data-action="view-sessions">
+                                        Просмотр
+                                    </button>
+                                </div>
+                                
+                                <div class="security-item">
+                                    <div class="security-info">
+                                        <h4>Резервные коды</h4>
+                                        <p>Сгенерируйте коды для восстановления</p>
+                                    </div>
+                                    <button class="security-action" data-action="backup-codes">
+                                        Сгенерировать
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card glass-panel">
+                        <div class="card-header">
+                            <h3>Членство</h3>
+                        </div>
+                        
+                        <div class="card-content">
+                            <div class="membership-info">
+                                <div class="membership-badge premium">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                    </svg>
+                                    <span>Premium</span>
+                                </div>
+                                
+                                <div class="membership-features">
+                                    <div class="feature-item">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                        </svg>
+                                        <span>Неограниченное хранилище</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                        </svg>
+                                        <span>Расширенная поддержка</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                        </svg>
+                                        <span>Кастомные темы</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="membership-actions">
+                                    <button class="membership-button upgrade">
+                                        Обновить до Ultimate
+                                    </button>
+                                    <button class="membership-button cancel">
+                                        Отменить подписку
+                                    </button>
+                                </div>
+                                
+                                <div class="membership-next">
+                                    <p>Следующее списание: <strong>15 февраля 2026</strong></p>
+                                    <p>Сумма: <strong>$9.99/месяц</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Другие секции будут аналогично... -->
+        </main>
+    </div>
+    
+    <!-- Скрипты -->
+    <script src="js/theme.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

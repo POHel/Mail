@@ -1,0 +1,714 @@
+/* ============================================
+   animations.css — Vision Mail Client 2026
+   Ключевые анимации (исправленная версия)
+   ============================================ */
+
+@layer animations {
+  
+  /* ===== KEYFRAMES ===== */
+  
+  /* Пульсирующий неон */
+  @keyframes pulse-neon {
+    0%, 100% {
+      box-shadow: 0 0 8px var(--neon-primary, #00ccff);
+      opacity: 1;
+    }
+    50% {
+      box-shadow: 0 0 16px var(--neon-primary, #00ccff), 
+                  0 0 24px var(--neon-glow, rgba(0, 204, 255, 0.3));
+      opacity: 0.8;
+    }
+  }
+  
+  /* Плавное появление */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Появление снизу */
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Появление сверху (для уведомлений) */
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Появление слева */
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Появление справа */
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Масштабирование */
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Spring-эффект */
+  @keyframes spring-bounce {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(0.95);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    70% {
+      transform: scale(0.99);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Вращение (по часовой стрелке) */
+  @keyframes spin-clockwise {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Вращение (против часовой стрелки) */
+  @keyframes spin-counterclockwise {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  /* Shimmer для skeleton */
+  @keyframes skeleton-shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  /* Волна неона */
+  @keyframes neon-wave {
+    0%, 100% {
+      text-shadow: 
+        0 0 4px var(--neon-primary, #00ccff),
+        0 0 8px var(--neon-primary, #00ccff);
+    }
+    50% {
+      text-shadow: 
+        0 0 8px var(--neon-primary, #00ccff),
+        0 0 16px var(--neon-primary, #00ccff),
+        0 0 24px var(--neon-glow, rgba(0, 204, 255, 0.3));
+    }
+  }
+  
+  /* Плавающее движение */
+  @keyframes float-element {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Градиентный сдвиг */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Пульсация (для индикаторов) */
+  @keyframes pulse-indicator {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(var(--neon-primary-rgb, 0, 204, 255), 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 6px rgba(var(--neon-primary-rgb, 0, 204, 255), 0);
+    }
+  }
+  
+  /* Волна (для загрузки) */
+  @keyframes wave {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(2);
+    }
+  }
+  
+  /* Отправка письма */
+  @keyframes send-flight {
+    0% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100px) scale(0);
+      opacity: 0;
+    }
+  }
+  
+  /* Появление уведомлений */
+  @keyframes notification-slide {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Переключение тем */
+  @keyframes theme-switch {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Градиентный поток */
+  @keyframes gradient-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Моргание курсора */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  /* Мерцание (shimmer) */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  /* Плавающие элементы с вращением */
+  @keyframes float-rotate {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-10px) rotate(120deg);
+    }
+    66% {
+      transform: translateY(5px) rotate(240deg);
+    }
+  }
+  
+  /* Нажатие */
+  @keyframes press {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Контекстное меню */
+  @keyframes context-menu {
+    from {
+      opacity: 0;
+      transform: scale(0.8) translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  /* Исчезновение */
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+  
+  /* Модальное окно */
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  /* Загрузка писем */
+  @keyframes email-load {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Успешное действие */
+  @keyframes success-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(var(--success-color-rgb, 76, 175, 80), 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(var(--success-color-rgb, 76, 175, 80), 0);
+    }
+  }
+  
+  /* Ошибка (тряска) */
+  @keyframes error-shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(5px);
+    }
+  }
+  
+  /* Звездочка */
+  @keyframes star-pop {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+  
+  /* Появление страницы */
+  @keyframes page-enter {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Сайдбар */
+  @keyframes sidebar-slide-in {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Тулкиты */
+  @keyframes tooltip-fade {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ===== UTILITY CLASSES ===== */
+  
+  .animate-fade-in {
+    animation: fade-in var(--transition-base, 0.3s) ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up var(--transition-base, 0.3s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-slide-down {
+    animation: slide-down var(--transition-base, 0.3s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-slide-left {
+    animation: slide-in-left var(--transition-base, 0.3s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-slide-right {
+    animation: slide-in-right var(--transition-base, 0.3s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in var(--transition-base, 0.3s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-spring {
+    animation: spring-bounce var(--transition-spring, 0.4s) forwards;
+  }
+  
+  .animate-spin-clockwise {
+    animation: spin-clockwise 1s linear infinite;
+  }
+  
+  .animate-spin-counterclockwise {
+    animation: spin-counterclockwise 1s linear infinite;
+  }
+  
+  .animate-pulse-neon {
+    animation: pulse-neon 2s ease-in-out infinite;
+  }
+  
+  .animate-neon-wave {
+    animation: neon-wave 3s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float-element 4s ease-in-out infinite;
+  }
+  
+  .animate-float-rotate {
+    animation: float-rotate 6s ease-in-out infinite;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+  
+  .animate-pulse-indicator {
+    animation: pulse-indicator 2s infinite;
+  }
+  
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+  
+  .animate-shimmer {
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  .animate-press {
+    animation: press 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .animate-fade-out {
+    animation: fade-out 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-success {
+    animation: success-pulse 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .animate-error {
+    animation: error-shake 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Staggered animations */
+  .stagger-1 { animation-delay: 50ms; }
+  .stagger-2 { animation-delay: 100ms; }
+  .stagger-3 { animation-delay: 150ms; }
+  .stagger-4 { animation-delay: 200ms; }
+  .stagger-5 { animation-delay: 250ms; }
+  .stagger-6 { animation-delay: 300ms; }
+  .stagger-7 { animation-delay: 350ms; }
+  .stagger-8 { animation-delay: 400ms; }
+  
+  /* ===== COMPONENT ANIMATIONS ===== */
+  
+  /* Страница */
+  .page-enter {
+    animation: page-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Сайдбар */
+  .sidebar {
+    animation: sidebar-slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Письма */
+  .email-item {
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .email-item:hover {
+    transform: translateX(4px);
+    background: rgba(var(--neon-primary-rgb, 0, 204, 255), 0.05);
+  }
+  
+  .email-loading {
+    animation: email-load 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  /* Звезды */
+  .star-button {
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .star-button:hover {
+    transform: scale(1.2);
+    color: #ffcc00;
+  }
+  
+  .star-button.starred {
+    animation: star-pop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Индикатор непрочитанного */
+  .unread-indicator {
+    animation: pulse-indicator 2s infinite;
+  }
+  
+  /* Загрузка */
+  .loading-wave {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .loading-wave span {
+    width: 4px;
+    height: 16px;
+    background: var(--neon-primary, #00ccff);
+    border-radius: 2px;
+    animation: wave 1s ease-in-out infinite;
+  }
+  
+  .loading-wave span:nth-child(2) { animation-delay: 0.1s; }
+  .loading-wave span:nth-child(3) { animation-delay: 0.2s; }
+  .loading-wave span:nth-child(4) { animation-delay: 0.3s; }
+  
+  /* Отправка */
+  .send-animation {
+    animation: send-flight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  /* Уведомления */
+  .notification-item {
+    animation: notification-slide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Тема */
+  .theme-toggle:active .theme-slider {
+    animation: theme-switch 0.3s ease;
+  }
+  
+  /* Градиент */
+  .animated-gradient {
+    background: linear-gradient(-45deg, 
+        var(--neon-primary, #00ccff), 
+        var(--neon-secondary, #ff3366), 
+        #ff3366, 
+        #00cc66);
+    background-size: 400% 400%;
+    animation: gradient-flow 15s ease infinite;
+  }
+  
+  /* Курсор */
+  .cursor-blink {
+    animation: blink 1s infinite;
+  }
+  
+  /* Загрузка контента */
+  .loading-shimmer {
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(255, 255, 255, 0) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  /* Плавающие элементы */
+  .float-element {
+    animation: float-rotate 6s ease-in-out infinite;
+  }
+  
+  /* Контекстное меню */
+  .context-menu {
+    animation: context-menu 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Переход страниц */
+  .page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--neon-primary, #00ccff);
+    z-index: 9999;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .page-transition.active {
+    transform: scaleX(1);
+  }
+  
+  /* Модальные окна */
+  .modal-container {
+    animation: modal-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Тултипы */
+  .tooltip {
+    animation: tooltip-fade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Параллакс */
+  .parallax-layer {
+    transition: transform 0.1s linear;
+  }
+  
+  /* ===== HOVER EFFECTS ===== */
+  
+  .hover-lift {
+    transition: transform var(--transition-spring, 0.4s), 
+                box-shadow var(--transition-fast, 0.2s);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hover-glow {
+    transition: box-shadow var(--transition-fast, 0.2s);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 24px var(--neon-glow, rgba(0, 204, 255, 0.3));
+  }
+  
+  .hover-scale {
+    transition: transform var(--transition-spring, 0.4s);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  .hover-scale:active {
+    transform: scale(0.98);
+  }
+  
+  /* ===== REDUCED MOTION ===== */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Альтернатива: отключение через data-атрибут */
+  [data-reduced-motion="true"] *,
+  [data-reduced-motion="true"] *::before,
+  [data-reduced-motion="true"] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

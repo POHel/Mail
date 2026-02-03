@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Входящие | SKATT Mail</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="inbox-page">
+    <!-- Анимированный фон -->
+    <div class="background-animation">
+        <div class="particles-container" id="particles"></div>
+        <div class="gradient-mesh"></div>
+    </div>
+    
+    <!-- Основной контейнер -->
+    <div class="app-container">
+        <!-- Боковая панель навигации -->
+        <nav class="sidebar scroll-glass">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 6H4V8h8v2zm6 4h-6v-2h6v2zm0-4h-6V8h6v2z"/>
+                        </svg>
+                    </div>
+                    <h1 class="logo-text">
+                        <span class="logo-gradient">SKATT Mail</span>
+                    </h1>
+                </div>
+                <button class="sidebar-toggle neumorphic-button">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="../mail/assets/icons/SKATT.jpg" alt="Аватар">
+                    <div class="user-status online"></div>
+                </div>
+                <div class="user-info">
+                    <div class="user-name">SKATT</div>
+                    <div class="user-email">skatt@skatt.su</div>
+                </div>
+            </div>
+            
+            <div class="sidebar-menu">
+                <div class="menu-section">
+                    <h3 class="menu-title">Почта</h3>
+                    <div class="menu-items">
+                        <a href="inbox.html" class="menu-item active">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Входящие</span>
+                            <span class="menu-badge unread-count">12</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        
+                        <a href="#" class="menu-item">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Избранное</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        
+                        <a href="#" class="menu-item">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Отправленные</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        
+                        <a href="#" class="menu-item">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M15 4v7H5.17l-.59.59-.58.58V4h11m1-2H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm5 4h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Черновики</span>
+                            <span class="menu-badge">3</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        
+                        <a href="#" class="menu-item">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 5h-3v5.37c0 1.27-.79 2.4-2 2.82-1.21-.42-2-1.55-2-2.82V7h-3c-.55 0-1-.45-1-1s.45-1 1-1h8c.55 0 1 .45 1 1s-.45 1-1 1z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Архив</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        
+                        <a href="#" class="menu-item">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M15 4v7H5.17l-.59.59-.58.58V4h11m1-2H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm5 4h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Корзина</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="menu-section">
+                    <h3 class="menu-title">Ярлыки</h3>
+                    <div class="menu-items">
+                        <a href="#" class="menu-item label-item">
+                            <span class="label-color" style="background: #ff3366"></span>
+                            <span class="menu-label">Работа</span>
+                        </a>
+                        
+                        <a href="#" class="menu-item label-item">
+                            <span class="label-color" style="background: #00cc66"></span>
+                            <span class="menu-label">Личное</span>
+                        </a>
+                        
+                        <a href="#" class="menu-item label-item">
+                            <span class="label-color" style="background: #0066ff"></span>
+                            <span class="menu-label">Путешествия</span>
+                        </a>
+                        
+                        <a href="#" class="menu-item label-item">
+                            <span class="label-color" style="background: #ffcc00"></span>
+                            <span class="menu-label">Финансы</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="menu-section">
+                    <h3 class="menu-title">Другие</h3>
+                    <div class="menu-items">
+                        <a href="contacts.html" class="menu-item">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Контакты</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        
+                        <a href="settings.html" class="menu-item">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Настройки</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        
+                        <a href="search.html" class="menu-item">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Поиск</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button class="compose-button neumorphic-button neon-glow" onclick="window.location.href='compose.html'">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    <span>Написать</span>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Основное содержимое -->
+        <main class="main-content">
+            <!-- Панель инструментов -->
+            <header class="toolbar scroll-glass">
+                <div class="toolbar-left">
+                    <div class="search-container">
+                        <div class="neumorphic-input">
+                            <input type="text" class="search-input" placeholder="Поиск писем..." id="globalSearch">
+                            <div class="input-border"></div>
+                            <div class="input-glow"></div>
+                            <button class="search-button">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="toolbar-right">
+                    <div class="toolbar-actions">
+                        <button class="action-button neumorphic-button" data-action="refresh" title="Обновить">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+                            </svg>
+                        </button>
+                        
+                        <button class="action-button neumorphic-button" data-action="select-all" title="Выбрать все">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+                            </svg>
+                        </button>
+                        
+                        <div class="action-dropdown">
+                            <button class="action-button neumorphic-button" data-action="more" title="Другие действия">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu">
+                                <button class="dropdown-item" data-action="mark-read">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    Отметить как прочитанное
+                                </button>
+                                <button class="dropdown-item" data-action="mark-unread">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                                    </svg>
+                                    Отметить как непрочитанное
+                                </button>
+                                <div class="dropdown-divider"></div>
+                                <button class="dropdown-item" data-action="archive">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/>
+                                    </svg>
+                                    Архивировать
+                                </button>
+                                <button class="dropdown-item text-danger" data-action="delete">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                                    </svg>
+                                    Удалить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="toolbar-user">
+                        <button class="user-notifications neumorphic-button" id="notificationsButton">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                            </svg>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        
+                        <div class="user-menu">
+                            <button class="user-avatar-button">
+                                <img src="https://ui-avatars.com/api/?name=User&background=8a2be2&color=fff" alt="Профиль">
+                            </button>
+                            <div class="user-dropdown">
+                                <div class="user-dropdown-header">
+                                    <img src="https://ui-avatars.com/api/?name=User&background=8a2be2&color=fff" alt="Профиль">
+                                    <div class="user-info">
+                                        <div class="user-name">Алексей Иванов</div>
+                                        <div class="user-email">alex@vision.com</div>
+                                    </div>
+                                </div>
+                                <div class="user-dropdown-menu">
+                                    <a href="settings.html" class="dropdown-item">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                                        </svg>
+                                        Настройки
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                        </svg>
+                                        Помощь
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <button class="dropdown-item text-danger" id="logoutButton">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+                                        </svg>
+                                        Выйти
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="theme-switcher">
+                        <button class="theme-toggle" id="themeToggle">
+                            <span class="theme-icon sun">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="5"/>
+                                    <line x1="12" y1="1" x2="12" y2="3"/>
+                                    <line x1="12" y1="21" x2="12" y2="23"/>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                                    <line x1="1" y1="12" x2="3" y2="12"/>
+                                    <line x1="21" y1="12" x2="23" y2="12"/>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                                </svg>
+                            </span>
+                            <span class="theme-icon moon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                                </svg>
+                            </span>
+                            <span class="theme-slider"></span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Контент с письмами -->
+            <div class="content-area">
+                <!-- Левая колонка: Список писем -->
+                <div class="emails-column">
+                    <div class="emails-header">
+                        <h2 class="emails-title">Входящие</h2>
+                        <div class="emails-filter">
+                            <button class="filter-button active">Все</button>
+                            <button class="filter-button">Непрочитанные</button>
+                            <button class="filter-button">Важные</button>
+                        </div>
+                    </div>
+                    
+                    <div class="emails-list" id="emailsList">
+                        <!-- Письма будут загружены через JavaScript -->
+                        <div class="email-item unread">
+                            <div class="email-checkbox">
+                                <input type="checkbox" id="email-1">
+                                <label for="email-1" class="checkbox-custom"></label>
+                            </div>
+                            <div class="email-star starred">
+                                <button class="star-button" data-id="1">★</button>
+                            </div>
+                            <div class="email-sender">
+                                <div class="sender-avatar" style="background-color: var(--neon-primary)">
+                                    V
+                                </div>
+                                <span class="sender-name">Vision Team</span>
+                            </div>
+                            <div class="email-content">
+                                <div class="email-subject">
+                                    Добро пожаловать в Vision Mail
+                                    <span class="email-label">welcome</span>
+                                    <span class="email-label">important</span>
+                                </div>
+                                <div class="email-preview">Мы рады приветствовать вас в нашем футуристическом почтовом клиенте будущего. Наслаждайтесь новым опытом общения...</div>
+                            </div>
+                            <div class="email-meta">
+                                <div class="email-date">10:30</div>
+                                <div class="email-attachments">📎 2</div>
+                            </div>
+                            <div class="email-actions">
+                                <button class="email-action" data-action="archive" title="Архивировать">📁</button>
+                                <button class="email-action" data-action="delete" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Еще примеры писем -->
+                        <div class="email-item unread">
+                            <div class="email-checkbox">
+                                <input type="checkbox" id="email-2">
+                                <label for="email-2" class="checkbox-custom"></label>
+                            </div>
+                            <div class="email-star">
+                                <button class="star-button" data-id="2">☆</button>
+                            </div>
+                            <div class="email-sender">
+                                <div class="sender-avatar" style="background-color: #ff3366">
+                                    A
+                                </div>
+                                <span class="sender-name">Анна Петрова</span>
+                            </div>
+                            <div class="email-content">
+                                <div class="email-subject">
+                                    Встреча завтра в 15:00
+                                    <span class="email-label">работа</span>
+                                </div>
+                                <div class="email-preview">Привет! Напоминаю о нашей встрече завтра в 15:00. Не забудьте подготовить презентацию...</div>
+                            </div>
+                            <div class="email-meta">
+                                <div class="email-date">Вчера</div>
+                            </div>
+                            <div class="email-actions">
+                                <button class="email-action" data-action="archive">📁</button>
+                                <button class="email-action" data-action="delete">🗑️</button>
+                            </div>
+                        </div>
+                        
+                        <div class="email-item read">
+                            <div class="email-checkbox">
+                                <input type="checkbox" id="email-3">
+                                <label for="email-3" class="checkbox-custom"></label>
+                            </div>
+                            <div class="email-star">
+                                <button class="star-button" data-id="3">☆</button>
+                            </div>
+                            <div class="email-sender">
+                                <div class="sender-avatar" style="background-color: #00cc66">
+                                    S
+                                </div>
+                                <span class="sender-name">Служба поддержки</span>
+                            </div>
+                            <div class="email-content">
+                                <div class="email-subject">
+                                    Обновление системы безопасности
+                                </div>
+                                <div class="email-preview">Уважаемый пользователь, мы обновили систему безопасности вашего аккаунта...</div>
+                            </div>
+                            <div class="email-meta">
+                                <div class="email-date">2 дня</div>
+                                <div class="email-attachments">📎 1</div>
+                            </div>
+                            <div class="email-actions">
+                                <button class="email-action" data-action="archive">📁</button>
+                                <button class="email-action" data-action="delete">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Правая колонка: Предпросмотр письма -->
+                <div class="preview-column glass-panel">
+                    <div class="preview-header">
+                        <div class="preview-header-top">
+                            <h3 class="preview-subject">Добро пожаловать в Vision Mail</h3>
+                            <div class="preview-actions">
+                                <button class="preview-action" title="Ответить">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/>
+                                    </svg>
+                                </button>
+                                <button class="preview-action" title="Переслать">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                                    </svg>
+                                </button>
+                                <button class="preview-action" title="Еще">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="preview-sender">
+                            <div class="sender-info">
+                                <div class="sender-avatar" style="background-color: var(--neon-primary)">
+                                    V
+                                </div>
+                                <div class="sender-details">
+                                    <div class="sender-name">Vision Team</div>
+                                    <div class="sender-email">support@vision.com</div>
+                                </div>
+                            </div>
+                            <div class="preview-date">Сегодня, 10:30</div>
+                        </div>
+                        <div class="preview-recipients">
+                            <span class="recipient-label">Кому:</span>
+                            <span class="recipient-email">ваш.email@example.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-body">
+                        <div class="preview-content">
+                            <h1>Добро пожаловать в Vision Mail! 🚀</h1>
+                            
+                            <p>Приветствуем вас в почтовом клиенте будущего. Мы создали Vision Mail, чтобы переосмыслить ваш опыт работы с электронной почтой.</p>
+                            
+                            <h2>🌟 Основные возможности:</h2>
+                            <ul>
+                                <li><strong>Футуристический дизайн</strong> с двумя темами и неоновыми акцентами</li>
+                                <li><strong>Продвинутая анимация</strong> с физикой пружин и тактильным откликом</li>
+                                <li><strong>Glassmorphism & Neomorphism</strong> для глубины и иммерсивности</li>
+                                <li><strong>Умный поиск</strong> с мгновенными результатами</li>
+                                <li><strong>Автоматическая сортировка</strong> писем по категориям</li>
+                            </ul>
+                            
+                            <h2>🎨 Настройте под себя:</h2>
+                            <p>Выберите свой любимый акцентный цвет и наслаждайтесь персонализированным интерфейсом.</p>
+                            
+                            <div class="signature">
+                                <p>С наилучшими пожеланиями,<br>
+                                <strong>Команда Vision Mail</strong></p>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-attachments">
+                            <h3>Вложения (2)</h3>
+                            <div class="attachments-list">
+                                <div class="attachment-item">
+                                    <div class="attachment-icon">📄</div>
+                                    <div class="attachment-info">
+                                        <div class="attachment-name">welcome_guide.pdf</div>
+                                        <div class="attachment-size">2.4 MB</div>
+                                    </div>
+                                    <button class="attachment-download">⬇️</button>
+                                </div>
+                                <div class="attachment-item">
+                                    <div class="attachment-icon">🖼️</div>
+                                    <div class="attachment-info">
+                                        <div class="attachment-name">vision_ui.png</div>
+                                        <div class="attachment-size">1.8 MB</div>
+                                    </div>
+                                    <button class="attachment-download">⬇️</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-footer">
+                        <button class="reply-button neumorphic-button">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/>
+                            </svg>
+                            Ответить
+                        </button>
+                        <button class="forward-button neumorphic-button">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                            </svg>
+                            Переслать
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Уведомления -->
+    <div class="notifications-panel glass-panel" id="notificationsPanel">
+        <div class="notifications-header">
+            <h3>Уведомления</h3>
+            <button class="notifications-close">×</button>
+        </div>
+        <div class="notifications-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">📧</div>
+                <div class="notification-content">
+                    <div class="notification-title">Новое письмо</div>
+                    <div class="notification-text">От: Vision Team</div>
+                    <div class="notification-time">2 минуты назад</div>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">🔒</div>
+                <div class="notification-content">
+                    <div class="notification-title">Безопасность</div>
+                    <div class="notification-text">Ваш пароль был обновлён</div>
+                    <div class="notification-time">1 час назад</div>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">🔄</div>
+                <div class="notification-content">
+                    <div class="notification-title">Обновление системы</div>
+                    <div class="notification-text">Доступны новые функции</div>
+                    <div class="notification-time">Вчера</div>
+                </div>
+            </div>
+        </div>
+        <div class="notifications-footer">
+            <button class="mark-all-read">Отметить все как прочитанные</button>
+        </div>
+    </div>
+    
+    <!-- Скрипты -->
+    <script src="js/theme.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>

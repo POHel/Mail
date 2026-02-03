@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | Vision Mail</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/pages-additional.css">
+</head>
+<body class="contacts-page">
+    <!-- Анимированный фон -->
+    <div class="background-animation">
+        <div class="particles-container" id="particles"></div>
+        <div class="gradient-mesh"></div>
+    </div>
+    
+    <!-- Основной контейнер -->
+    <div class="app-container">
+        <!-- Навигация -->
+        <nav class="contacts-sidebar scroll-glass">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                    <h1 class="logo-text">
+                        <span class="logo-gradient">Контакты</span>
+                    </h1>
+                </div>
+                <a href="inbox.html" class="back-button neumorphic-button">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="sidebar-search">
+                <div class="neumorphic-input">
+                    <input type="text" placeholder="Поиск контактов..." id="contactsSearch">
+                    <div class="input-border"></div>
+                    <div class="input-glow"></div>
+                    <button class="search-button">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="sidebar-menu">
+                <div class="menu-section">
+                    <h3 class="menu-title">Категории</h3>
+                    <div class="menu-items">
+                        <button class="menu-item active" data-category="all">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Все контакты</span>
+                            <span class="menu-badge">147</span>
+                        </button>
+                        
+                        <button class="menu-item" data-category="frequent">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Частые</span>
+                            <span class="menu-badge">23</span>
+                        </button>
+                        
+                        <button class="menu-item" data-category="starred">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Избранные</span>
+                            <span class="menu-badge">12</span>
+                        </button>
+                        
+                        <button class="menu-item" data-category="work">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Работа</span>
+                            <span class="menu-badge">45</span>
+                        </button>
+                        
+                        <button class="menu-item" data-category="personal">
+                            <span class="menu-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                                </svg>
+                            </span>
+                            <span class="menu-label">Личные</span>
+                            <span class="menu-badge">34</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-section">
+                    <h3 class="menu-title">Группы</h3>
+                    <div class="menu-items">
+                        <button class="menu-item group-item" data-group="developers">
+                            <span class="group-color" style="background: #00cc66"></span>
+                            <span class="menu-label">Разработчики</span>
+                            <span class="menu-badge">8</span>
+                        </button>
+                        
+                        <button class="menu-item group-item" data-group="designers">
+                            <span class="group-color" style="background: #ff3366"></span>
+                            <span class="menu-label">Дизайнеры</span>
+                            <span class="menu-badge">5</span>
+                        </button>
+                        
+                        <button class="menu-item group-item" data-group="managers">
+                            <span class="group-color" style="background: #0066ff"></span>
+                            <span class="menu-label">Менеджеры</span>
+                            <span class="menu-badge">7</span>
+                        </button>
+                        
+                        <button class="menu-item group-item" data-group="clients">
+                            <span class="group-color" style="background: #ffcc00"></span>
+                            <span class="menu-label">Клиенты</span>
+                            <span class="menu-badge">42</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="sidebar-actions">
+                    <button class="action-button full-width" data-action="import">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                        </svg>
+                        Импорт контактов
+                    </button>
+                    
+                    <button class="action-button full-width" data-action="export">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/>
+                        </svg>
+                        Экспорт контактов
+                    </button>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon sun">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                    </span>
+                    <span class="theme-icon moon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </span>
+                    <span class="theme-slider"></span>
+                </button>
+                
+                <button class="add-contact-button neumorphic-button neon-glow" data-action="add-contact">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    Новый контакт
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Основное содержимое -->
+        <main class="contacts-content">
+            <!-- Панель инструментов -->
+            <header class="contacts-toolbar scroll-glass">
+                <div class="toolbar-left">
+                    <h2 class="contacts-title" id="contactsTitle">Все контакты</h2>
+                    <div class="contacts-stats">
+                        <span class="stat-item">
+                            <span class="stat-value">147</span>
+                            <span class="stat-label">контактов</span>
+                        </span>
+                        <span class="stat-item">
+                            <span class="stat-value">23</span>
+                            <span class="stat-label">онлайн</span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="toolbar-right">
+                    <div class="view-controls">
+                        <button class="view-button active" data-view="grid">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/>
+                            </svg>
+                        </button>
+                        <button class="view-button" data-view="list">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="sort-controls">
+                        <select class="sort-select neumorphic-element">
+                            <option value="name-asc">Имя (А-Я)</option>
+                            <option value="name-desc">Имя (Я-А)</option>
+                            <option value="date-new">Дата добавления (новые)</option>
+                            <option value="date-old">Дата добавления (старые)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="bulk-actions">
+                        <button class="action-button neumorphic-button" data-action="select-all">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+                            </svg>
+                        </button>
+                        
+                        <div class="action-dropdown">
+                            <button class="action-button neumorphic-button" data-action="more">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu">
+                                <button class="dropdown-item" data-action="export-selected">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/>
+                                    </svg>
+                                    Экспорт выбранных
+                                </button>
+                                <button class="dropdown-item" data-action="add-to-group">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                    Добавить в группу
+                                </button>
+                                <div class="dropdown-divider"></div>
+                                <button class="dropdown-item text-danger" data-action="delete-selected">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                                    </svg>
+                                    Удалить выбранные
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Контент контактов -->
+            <div class="contacts-grid" id="contactsGrid">
+                <!-- Контактные карточки -->
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <div class="contact-avatar online">
+                            <img src="https://ui-avatars.com/api/?name=Anna+Petrova&background=ff3366&color=fff" alt="Анна Петрова">
+                        </div>
+                        <div class="contact-actions">
+                            <button class="contact-action" data-action="star" title="В избранное">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                </svg>
+                            </button>
+                            <button class="contact-action" data-action="more" title="Действия">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="contact-card-body">
+                        <h3 class="contact-name">Анна Петрова</h3>
+                        <p class="contact-title">Дизайнер продукта</p>
+                        <p class="contact-company">Vision Technologies</p>
+                        
+                        <div class="contact-tags">
+                            <span class="contact-tag work">Работа</span>
+                            <span class="contact-tag favorite">Избранное</span>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+                                </svg>
+                                <span>anna@vision.com</span>
+                            </div>
+                            <div class="info-item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                                <span>+7 (999) 123-45-67</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-card-footer">
+                        <button class="contact-button message" data-action="message">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                            </svg>
+                            Написать
+                        </button>
+                        <button class="contact-button call" data-action="call">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            Позвонить
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Ещё контакты... -->
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <div class="contact-avatar online">
+                            <img src="https://ui-avatars.com/api/?name=Mikhail+Sidorov&background=0066ff&color=fff" alt="Михаил Сидоров">
+                        </div>
+                        <div class="contact-actions">
+                            <button class="contact-action" data-action="star" title="В избранное">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                </svg>
+                            </button>
+                            <button class="contact-action" data-action="more" title="Действия">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="contact-card-body">
+                        <h3 class="contact-name">Михаил Сидоров</h3>
+                        <p class="contact-title">Senior Developer</p>
+                        <p class="contact-company">Vision Technologies</p>
+                        
+                        <div class="contact-tags">
+                            <span class="contact-tag work">Работа</span>
+                            <span class="contact-tag developers">Разработчики</span>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+                                </svg>
+                                <span>mikhail@vision.com</span>
+                            </div>
+                            <div class="info-item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                                <span>+7 (999) 765-43-21</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-card-footer">
+                        <button class="contact-button message" data-action="message">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                            </svg>
+                            Написать
+                        </button>
+                        <button class="contact-button call" data-action="call">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            Позвонить
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <div class="contact-avatar away">
+                            <img src="https://ui-avatars.com/api/?name=Ekaterina+Ivanova&background=8a2be2&color=fff" alt="Екатерина Иванова">
+                        </div>
+                        <div class="contact-actions">
+                            <button class="contact-action starred" data-action="star" title="Убрать из избранного">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                </svg>
+                            </button>
+                            <button class="contact-action" data-action="more" title="Действия">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="contact-card-body">
+                        <h3 class="contact-name">Екатерина Иванова</h3>
+                        <p class="contact-title">Project Manager</p>
+                        <p class="contact-company">Vision Technologies</p>
+                        
+                        <div class="contact-tags">
+                            <span class="contact-tag work">Работа</span>
+                            <span class="contact-tag favorite">Избранное</span>
+                            <span class="contact-tag managers">Менеджеры</span>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+                                </svg>
+                                <span>ekaterina@vision.com</span>
+                            </div>
+                            <div class="info-item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                                <span>+7 (999) 888-77-66</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-card-footer">
+                        <button class="contact-button message" data-action="message">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                            </svg>
+                            Написать
+                        </button>
+                        <button class="contact-button call" data-action="call">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            Позвонить
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Добавьте больше контактов по аналогии -->
+            </div>
+            
+            <!-- Панель деталей контакта (справа) -->
+            <div class="contact-details-panel glass-panel" id="contactDetails">
+                <div class="details-header">
+                    <h3>Детали контакта</h3>
+                    <button class="details-close">×</button>
+                </div>
+                
+                <div class="details-content">
+                    <!-- Контент будет загружен динамически -->
+                    <div class="details-placeholder">
+                        <div class="placeholder-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
+                        <p>Выберите контакт для просмотра деталей</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Модальное окно нового контакта -->
+    <div class="modal-overlay" id="newContactModal">
+        <div class="modal-container glass-panel">
+            <div class="modal-header">
+                <h2>Новый контакт</h2>
+                <button class="modal-close">×</button>
+            </div>
+            <div class="modal-content">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-section">
+                        <h3>Основная информация</h3>
+                        <div class="form-group">
+                            <label for="contactAvatar">Аватар</label>
+                            <div class="avatar-upload">
+                                <div class="avatar-preview">
+                                    <img src="https://ui-avatars.com/api/?name=New+Contact&background=8a2be2&color=fff" alt="Новый контакт">
+                                </div>
+                                <button type="button" class="avatar-upload-button">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M19 7v2.99s-1.99.01-2 0V7h-3s.01-1.99 0-2h3V2h2v3h3v2h-3zm-3 4V8h-3V5H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8h-3zM5 19l3-4 2 3 3-4 4 5H5z"/>
+                                    </svg>
+                                    Загрузить фото
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Имя *</label>
+                                <input type="text" id="firstName" required class="neumorphic-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Фамилия *</label>
+                                <input type="text" id="lastName" required class="neumorphic-input">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactTitle">Должность</label>
+                            <input type="text" id="contactTitle" class="neumorphic-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactCompany">Компания</label>
+                            <input type="text" id="contactCompany" class="neumorphic-input">
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Контактная информация</h3>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Электронная почта *</label>
+                            <input type="email" id="contactEmail" required class="neumorphic-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactPhone">Телефон</label>
+                            <input type="tel" id="contactPhone" class="neumorphic-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactAddress">Адрес</label>
+                            <textarea id="contactAddress" rows="3" class="neumorphic-input"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Дополнительно</h3>
+                        
+                        <div class="form-group">
+                            <label>Категории</label>
+                            <div class="categories-select">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="category" value="work">
+                                    <span class="checkbox-custom neumorphic-checkbox"></span>
+                                    <span class="checkbox-label">Работа</span>
+                                </label>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="category" value="personal">
+                                    <span class="checkbox-custom neumorphic-checkbox"></span>
+                                    <span class="checkbox-label">Личное</span>
+                                </label>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="category" value="frequent">
+                                    <span class="checkbox-custom neumorphic-checkbox"></span>
+                                    <span class="checkbox-label">Частые</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Группы</label>
+                            <select multiple class="groups-select neumorphic-input">
+                                <option value="developers">Разработчики</option>
+                                <option value="designers">Дизайнеры</option>
+                                <option value="managers">Менеджеры</option>
+                                <option value="clients">Клиенты</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactNotes">Заметки</label>
+                            <textarea id="contactNotes" rows="4" class="neumorphic-input" placeholder="Добавьте заметки о контакте..."></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button cancel" type="button">Отмена</button>
+                <button class="modal-button confirm" type="submit" form="contactForm">Сохранить контакт</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Скрипты -->
+    <script src="js/theme.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/contacts.js"></script>
+</body>
+</html>
